@@ -52,7 +52,8 @@ public class Slinding : MonoBehaviour
     }
 
     private void StartSlide()
-    {  if(pm.grounded)
+    {  if(pm.grounded && pm.moveSpeed > 6.5f)
+        
         {
             pm.sliding = true;
 
@@ -62,7 +63,7 @@ public class Slinding : MonoBehaviour
             slideTimer = maxSlideTime;
 
             cam.DoFov(75f);
-            cam.DoTilt(9f);
+            cam.DoTilt(8.4f);
         }
     
         

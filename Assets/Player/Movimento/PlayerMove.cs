@@ -6,7 +6,7 @@ using DG.Tweening;
 public class PlayerMove : MonoBehaviour
 {
     [Header("Movement")]
-    private float moveSpeed;
+    public float moveSpeed;
     public float walkSpeed;
     public float sprintSpeed;
     public float slideSpeed;
@@ -112,11 +112,7 @@ public class PlayerMove : MonoBehaviour
                     cam.DoFov(60f);
                 }
             }
-            
-           
-                
-            
-         
+                 
     }
 
     private void FixedUpdate()
