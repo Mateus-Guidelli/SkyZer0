@@ -5,19 +5,31 @@ using UnityEngine;
 public class playerPickUpDrop : MonoBehaviour
 {
     [SerializeField] private Transform playerCameraTransform;
+    [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask pickUpLayerMask;
+
+    private ObjectGrabbable objectGrabbable;
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.F))
-        {
-            float pickUpDistance = 2f;
-            if(Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask ))
+        {   if(objectGrabbable == null)
             {
-               if(raycastHit.transform.TryGetComponent(out ObjectGrabbable objectGrabbable))
-               {
-                 Debug.Log(objectGrabbable);    
-               }
+                float pickUpDistance = 2f;
+                if(Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit, pickUpDistance, pickUpLayerMask ))
+                {
+                    if(raycastHit.transform.TryGetComponent(out objectGrabbable))
+                    {
+                        objectGrabbable.Grab(objectGrabPointTransform); 
+                    }
+                }
+    
             }
+            else
+            {
+                objectGrabbable.Drop();
+                objectGrabbable = null;
+            }            
+           
         }   
     }
 }
