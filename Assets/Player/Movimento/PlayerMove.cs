@@ -6,7 +6,7 @@ using DG.Tweening;
 public class PlayerMove : MonoBehaviour
 {
     [Header("Movement")]
-    public float moveSpeed;
+    [HideInInspector] public float moveSpeed;
     public float walkSpeed;
     public float sprintSpeed;
     public float slideSpeed;
