@@ -7,12 +7,14 @@ public class PickUpScript : MonoBehaviour
     public GameObject player;
     public Transform holdPos;
     
+    
     public float throwForce = 500f; 
     public float pickUpRange = 5f; 
     private GameObject heldObj; 
     private Rigidbody rb; 
     private bool canDrop = true; 
     private int LayerNumber;
+  
 
     public void Start()
     {
@@ -34,6 +36,7 @@ public class PickUpScript : MonoBehaviour
                         
                         PickUpObject(hit.transform.gameObject);
                     }
+                    
                 }
             }
             else
@@ -42,6 +45,7 @@ public class PickUpScript : MonoBehaviour
                 {
                     StopClipping(); 
                     DropObject();
+                   
                 }
             }
         }
@@ -77,6 +81,7 @@ public class PickUpScript : MonoBehaviour
         rb.isKinematic = false;
         heldObj.transform.parent = null; 
         heldObj = null; 
+        
     }
     public void MoveObject()
     {
