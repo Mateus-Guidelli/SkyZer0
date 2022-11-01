@@ -15,7 +15,7 @@ public class ragDollOnOff : MonoBehaviour
           
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "canHit")
         {
@@ -28,13 +28,13 @@ public class ragDollOnOff : MonoBehaviour
     Collider[] ragDollColliders;
     Rigidbody[] limbsRigidbodies;
     
-    void GetRagdoll()
+    public void GetRagdoll()
     {
        ragDollColliders = Rig.GetComponentsInChildren<Collider>();
        limbsRigidbodies = Rig.GetComponentsInChildren<Rigidbody>();  
     }
 
-    void RagdollModeOn()
+    public void RagdollModeOn()
     {
          Animator.enabled = false;
           foreach(Collider col in ragDollColliders)

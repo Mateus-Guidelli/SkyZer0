@@ -7,7 +7,6 @@ public class PickUpScript : MonoBehaviour
     public GameObject player;
     public Transform holdPos;
     
-    
     public float throwForce = 500f; 
     public float pickUpRange = 5f; 
     private GameObject heldObj; 
@@ -33,7 +32,6 @@ public class PickUpScript : MonoBehaviour
                     
                     if (hit.transform.gameObject.tag == "canPickUp")
                     {
-                        
                         PickUpObject(hit.transform.gameObject);
                     }
                     
@@ -57,6 +55,8 @@ public class PickUpScript : MonoBehaviour
             {
                 StopClipping();
                 ThrowObject();
+                
+                
             }
 
         }
@@ -76,6 +76,7 @@ public class PickUpScript : MonoBehaviour
     }
     public void DropObject()
     {
+        transform.gameObject.tag = "canHit";
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         heldObj.layer = 0; 
         rb.isKinematic = false;
@@ -89,6 +90,7 @@ public class PickUpScript : MonoBehaviour
     }
     public void ThrowObject()
     {
+        transform.gameObject.tag = "canHit";
         Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), player.GetComponent<Collider>(), false);
         heldObj.layer = 0;
         rb.isKinematic = false;
