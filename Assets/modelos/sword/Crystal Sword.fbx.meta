@@ -3,7 +3,27 @@ guid: 189a5ffd25e3b344185211a390294717
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glow
+    second: {fileID: 2100000, guid: 6bc5d33232729af4d9bd5f488d8948c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lame
+    second: {fileID: 2100000, guid: 6b71f730873a6204da8b699833a880ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: dba04f625d444fa47aa039c4e79e30cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material 2
+    second: {fileID: 2100000, guid: 14627fbc375734b48ad00ec7fcd08c27, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
