@@ -33,13 +33,13 @@ public class pegaArma : MonoBehaviour
             
             rb.isKinematic = false;
             coll.isTrigger = false;
-          
-              
+            
+             
         }
         if (equipped)
-        {
-            
+        { 
             cd.enabled = true;
+            Weaponcamera.cullingMask = LayerMask.GetMask("weapom");
             
             rb.isKinematic = true;
             coll.isTrigger = true;
@@ -63,6 +63,7 @@ public class pegaArma : MonoBehaviour
         anim.enabled = true;
         equipped = true;
         slotFull = true;
+        Weaponcamera.cullingMask = LayerMask.GetMask("weapom");
        
         
         transform.SetParent(weaponHolder);
@@ -83,8 +84,7 @@ public class pegaArma : MonoBehaviour
     private void Drop()
     {
         collDrop.enabled = true;
-        
-        
+        Weaponcamera.cullingMask = -1;
         anim.enabled = false;
         wc.CanAttack = false;
         equipped = false;
