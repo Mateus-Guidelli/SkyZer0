@@ -15,9 +15,7 @@ public class WeapomController : MonoBehaviour
         {
             if(CanAttack)
             {
-               SwordAttack();
-               SwordAttack2();
-                
+               SwordAttack(); 
             }
         }
     }
@@ -27,15 +25,6 @@ public class WeapomController : MonoBehaviour
         CanAttack = false;
         Animator anim = Sword.GetComponent<Animator>();
         anim.SetTrigger("attack");
-        StartCoroutine(ResetAttackCooldown());
-        
-    }
-    public void SwordAttack2()
-    {
-        IsAttacking = true;
-        CanAttack = false;
-        Animator anim = Sword.GetComponent<Animator>();
-        anim.SetTrigger("attack2");
         StartCoroutine(ResetAttackCooldown());
         
     }
