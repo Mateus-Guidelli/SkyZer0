@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class pegaArma : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class pegaArma : MonoBehaviour
     public WeapomController wc;
     public BoxCollider collDrop;
     public Camera Weaponcamera;
-
+    public Camera MainCamera;
     
 
     public float pickUpRange;
@@ -21,10 +22,12 @@ public class pegaArma : MonoBehaviour
 
     public bool equipped;
     public static bool slotFull;
+    
     Animator anim;
-
+    
     private void Start()
     {
+       
         anim = weapon.GetComponent<Animator>();
         //Setup
         if (!equipped)
@@ -65,7 +68,6 @@ public class pegaArma : MonoBehaviour
         slotFull = true;
         Weaponcamera.cullingMask = LayerMask.GetMask("weapom");
        
-        
         transform.SetParent(weaponHolder);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.Euler(Vector3.zero);
@@ -78,13 +80,14 @@ public class pegaArma : MonoBehaviour
         wc.CanAttack = true;
         
         coll.enabled = true;
-        
     }
 
+    
     private void Drop()
     {
         collDrop.enabled = true;
-        Weaponcamera.cullingMask = -1;
+        Weaponcamera.cullingMask = LayerMask.GetMask("nothing");
+        MainCamera.cullingMask = LayerMask.GetMask("weapom");
         anim.enabled = false;
         wc.CanAttack = false;
         equipped = false;
