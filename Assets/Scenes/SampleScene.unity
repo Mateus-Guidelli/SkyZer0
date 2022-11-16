@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1268,8 +1268,7 @@ Transform:
   m_LocalPosition: {x: -0.6998489, y: 0.3707773, z: 0.24977005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 543450653580549864}
+  m_Children: []
   m_Father: {fileID: 963194228}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3129,6 +3128,9 @@ MonoBehaviour:
   holdPos: {fileID: 1593974277}
   throwForce: 500
   pickUpRange: 5
+  pm: {fileID: 0}
+  HP: {fileID: 0}
+  damage: 0
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6733,7 +6735,7 @@ MonoBehaviour:
   maxSlideTime: 0.85
   slideForce: 200
   slideYScale: 0.1
-  slideKey: 99
+  slideKey: 306
 --- !u!114 &2026465692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7417,12 +7419,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149308654674}
   m_LocalRotation: {x: -0.6966373, y: -0.2651954, z: 0.6340676, w: 0.20573342}
-  m_LocalPosition: {x: 1.385, y: -0.718, z: 0.255}
+  m_LocalPosition: {x: 3.14, y: -0.224, z: 0.78}
   m_LocalScale: {x: 6.5000014, y: 7, z: 7}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 413102534}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 2.847, y: -96.396, z: 140.864}
 --- !u!4 &608321762417118537
 Transform:
@@ -8315,8 +8317,8 @@ Rigidbody:
   m_GameObject: {fileID: 919132149308654674}
   serializedVersion: 2
   m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 2
+  m_AngularDrag: 10
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -8349,7 +8351,7 @@ MonoBehaviour:
   pickUpRange: 4
   dropForwardForce: 60
   dropUpwardForce: 1
-  equipped: 1
+  equipped: 0
 --- !u!65 &3469287837362311507
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8361,7 +8363,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.03005662, y: 0.2058649, z: 0.025272}
+  m_Size: {x: 0.03005662, y: 0.2058649, z: 0.021272}
   m_Center: {x: 0.0000000040270556, y: -0.0675628, z: -0.0000000025169098}
 --- !u!4 &3558328721078254990
 Transform:

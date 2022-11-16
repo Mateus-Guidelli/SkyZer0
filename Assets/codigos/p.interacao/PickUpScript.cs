@@ -13,6 +13,9 @@ public class PickUpScript : MonoBehaviour
     private Rigidbody rb; 
     private bool canDrop = true; 
     private int LayerNumber;
+    public PlayerMove pm;
+    public Enemyhealth HP; 
+    public float damage;
   
 
     public void Start()
@@ -109,4 +112,5 @@ public class PickUpScript : MonoBehaviour
             heldObj.transform.position = transform.position + new Vector3(0f, -0.5f, 0f);
         }
     }
+
 }

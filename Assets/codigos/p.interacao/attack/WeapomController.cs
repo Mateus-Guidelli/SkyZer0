@@ -8,6 +8,9 @@ public class WeapomController : MonoBehaviour
     public bool CanAttack = true;
     public float AttackCooldown = 1.0f;
     public bool IsAttacking = false;
+  
+
+    
 
     void Update()
     {
@@ -26,6 +29,7 @@ public class WeapomController : MonoBehaviour
         Animator anim = Sword.GetComponent<Animator>();
         anim.SetTrigger("attack");
         StartCoroutine(ResetAttackCooldown());
+       
         
     }
 
