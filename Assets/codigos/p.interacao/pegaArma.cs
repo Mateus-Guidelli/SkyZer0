@@ -40,13 +40,14 @@ public class pegaArma : MonoBehaviour
             wc.CanAttack = false;
             coll.isTrigger = false;
             coll.enabled = false;
-             
+            Weaponcamera.cullingMask = LayerMask.GetMask("nothing");
+            MainCamera.cullingMask = -1;
         }
         if (equipped)
         { 
             cd.enabled = true;
             Weaponcamera.cullingMask = LayerMask.GetMask("weapom");
-            
+
             rb.isKinematic = true;
             coll.isTrigger = true;
             slotFull = true;
